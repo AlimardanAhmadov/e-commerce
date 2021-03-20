@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!-- breadcrumb start -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>wishlist</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                        <li class="breadcrumb-item active">wishlist</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
+
+
+<!--section start-->
+<section class="wishlist-section section-b-space">
+    <div class="container">
+        <form action="{% url 'remove_wishlist_item' %}" method="GET">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table cart-table table-responsive-xs">
+                        <thead>
+                            <tr class="table-head">
+                                <th scope="col">select</th>
+                                <th scope="col">image</th>
+                                <th scope="col">product name</th>
+                                <th scope="col">price</th>
+                                <th scope="col">action</th>
+                            </tr>
+                        </thead>
+                        {% if addresses_in_pakistan %}
+                        {% for product in wishlist.products.all %}
+                        <tbody class="wishlist-item" id="wishlist-item">
+                            <tr>
+                                <td>
+                                    <div class="custom-control custom-checkbox collection-filter-checkbox">
+                                        <input type="checkbox" name="item" class="custom-control-input" id="{{ product.title }}" value="{{ product.title }}">
+                                        <label class="custom-control-label" for="{{ product.title }}"></label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <a href="{% url 'product_details' product.slug %}"><img src="{{ product.cover.url }}" alt=""></a>
+                                </td>
+                                <td><a href="{% url 'product_details' product.slug %}">{{ product.title }}</a>
+                                    <div class="mobile-cart-content row">
+                                        <div class="col-xs-3">
+                                            <h2 class="td-color">PKR {{ product.price_pakistani_rupee }}</h2>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <h4>{% if product.discounted_price %}
+                                        {% if addresses_in_pakistan %}
+                                            PKR {{ product.discounted_price_rupee }}
+                                            {% else %}
+                                            ${{ product.discounted_price }}
+                                            {% endif %}<del>{% if addresses_in_pakistan %}
+                                            PKR{{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}</del></h4>
+                                        {% else %}
+                                        <h4>
+                                            {% if addresses_in_pakistan %}
+                                            PKR {{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}
+                                        {% endif %}
+                                    </h4>
+                                </td>
+                                <td>
+                                    <a href="{% url 'product_details' product.slug %}" class="cart" style="display: inline-block; padding-left: 15px;">
+                                        <i class="ti-shopping-cart"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                        {% else %}
+                        {% for product in wishlist.products.all %}
+                        <tbody class="wishlist-product" id="wishlist-item">
+                            <tr>
+                                <td>
+                                    <div class="custom-control custom-checkbox collection-filter-checkbox">
+                                        <input type="checkbox" name="item" class="custom-control-input" id="{{ product.title }}" value="{{ product.title }}">
+                                        <label class="custom-control-label" for="{{ product.title }}"></label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <a href="{% url 'product_details' product.slug %}"><img src="{{ product.cover.url }}" alt=""></a>
+                                </td>
+                                <td><a href="{% url 'product_details' product.slug %}">{{ product.title }}</a>
+                                    <div class="mobile-cart-content row">
+                                        <div class="col-xs-3">
+                                            <h2 class="td-color">${{ product.price_dollar }}</h2>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <h2>{% if product.discounted_price %}
+                                        {% if addresses_in_pakistan %}
+                                            PKR {{ product.discounted_price_rupee }}
+                                            {% else %}
+                                            ${{ product.discounted_price }}
+                                            {% endif %}<del>{% if addresses_in_pakistan %}
+                                            PKR{{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}</del></h4>
+                                        {% else %}
+                                        <h4>
+                                            {% if addresses_in_pakistan %}
+                                            PKR {{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}
+                                        {% endif %}
+                                    </h2>
+                                </td>
+                                <td>
+                                    <a href="{% url 'product_details' product.slug %}" class="cart" style="display: inline-block; padding-left: 15px;">
+                                        <i class="ti-shopping-cart"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                        {% endif %}
+                    </table>
+                </div>
+            </div>
+            <div class="row wishlist-buttons">
+                <div class="col-12"><a href="#" class="btn btn-solid">continue shopping</a> 
+                    <button type="submit" class="btn btn-solid">delete</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<!--section end-->
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<title>{% block title %} eCommerce | Cart {% endblock %}</title>
+
+<!-- breadcrumb start -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>cart</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                        <li class="breadcrumb-item active">cart</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
+
+
+<!--section start-->
+<section class="cart-section section-b-space">
+    <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table cart-table table-responsive-xs">
+                        <thead>
+                            <tr class="table-head">
+                                <th scope="col">image</th>
+                                <th scope="col">product name</th>
+                                <th scope="col">price</th>
+                                <th scope="col">quantity</th>
+                                <th scope="col">action</th>
+                                <th scope="col">total</th>
+                            </tr>
+                        </thead>
+                        {% if addresses_in_pakistan %}
+                        {% for item in cart_items %}
+                        <tbody id="cart-item" class="item-row{{ item.id }}">
+                            <tr>
+                                <td>
+                                    <!--<div class="custom-control custom-checkbox collection-filter-checkbox" style="display: inline-block; position: relative; bottom: 10px; right: 20px;">
+                                        <input type="checkbox" name="item" class="custom-control-input" id="{{ item.id }}" value="{{ item.product.title }}">
+                                        <label class="custom-control-label" for="{{ item.id }}">{{ item.id }}</label>
+                                    </div>-->
+                                    <a style="display: inline-block;" href="{% url 'product_details' item.product.id %}"><img src="{{ item.product.cover.url }}" alt=""></a>
+                                </td>
+                                <td><a href="#">{{ item.product.title }} ({{ item.color }}, {{ item.size }})</a>
+                                    <div class="mobile-cart-content row">
+                                        <div class="col-xs-3">
+                                            <div class="qty-box">
+                                                <div class="input-group">
+                                                    <input type="text" name="quantity" class="form-control input-number" value="{{ item.quantity }}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <h2 class="td-color">PKR {{ item.product.price_pakistani_rupee }}</h2>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <h2>PKR {{ item.product.price_pakistani_rupee }}</h2>
+                                </td>
+                                {% include "edit_cart_section.html" %}
+                                <td>
+                                    <h2 class="td-color" style="display: inline-block;">PKR {{ item.total_price_rupee }}</h2>
+                                    {% include 'remove_item_section.html' %}
+                                </td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                        {% else %}
+                        {% for item in cart_items %}
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="{% url 'product_details' item.product.slug %}"><img src="{{ item.product.cover.url }}" alt=""></a>
+                                </td>
+                                <td><a href="#">{{ item.product.title }} ({{ item.color }}, {{ item.size }})</a>
+                                    <div class="mobile-cart-content row">
+                                        <div class="col-xs-3">
+                                            <div class="qty-box">
+                                                <div class="input-group">
+                                                    <input type="text" name="quantity" class="form-control input-number" value="{{ item.quantity }}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <h2 class="product-price">${{ item.product.price_dollar }}</h2>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <h2 class="product-price">${{ item.product.price_dollar }}</h2>
+                                    <input type="hidden" name="" id="product-price" value="{{ item.product.price_dollar }}">
+                                </td>
+                                
+                                {% include "edit_cart_section.html" %}
+                                <td>
+                                    <h2 id="total-price" class="td-color-1">$ <span id="total-price-45">{{ item.total_price }}</span></h2>
+                                    {% include 'remove_item_section.html' %}
+                                </td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                        {% endif %}
+                    </table>
+                    <table class="table cart-table table-responsive-md" id="total-price">
+                        <tfoot>
+                            <tr>
+                                <td>total price :</td>
+                                <td>
+                                    {% if addresses_in_pakistan %}
+                                    <h2>PKR {{total_amount_rupee}}</h2>
+                                    {% else %}
+                                    <h2>${{total_amount}}</h2>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div class="row cart-buttons">
+                <div class="col-6"><a href="{% url 'remove_cart_item' %}" type="button" class="btn btn-solid">delete</a></div>
+                <div class="col-6"><a href="{% url 'cart_info' %}" id="welcomeDiv" class="btn btn-solid" style="margin-right: 15px; display: none;">calculate new total</a><a href="#" class="btn btn-solid">check out</a></div>
+            </div>
+    </div>
+</section>
+<!--section end-->
+{% endblock %}

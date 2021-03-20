@@ -1,0 +1,15 @@
+<form action="{% url 'edit_cart_item' item.id %}" method="POST" class="edit-cart-form">
+    {% csrf_token %}
+    <td>
+        <div class="qty-box">
+            <div class="input-group">
+                <input type="number" min="1" name="quantity" id="{{ item.id }}" class="form-control input-number" value="{{ item.quantity }}">
+            </div>
+        </div>
+    </td>
+    <td>
+        <button type="submit" value="{{ item.id }}" class="fabutton" style="background: none; padding: 0px; border: none;">
+            <i style="cursor: pointer; font-size: 18px;" class="far fa-save"></i>
+        </button>
+    </td>
+</form>

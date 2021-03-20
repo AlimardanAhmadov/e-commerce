@@ -1,0 +1,527 @@
+<section class="section-b-space p-t-0 ratio_asos">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="theme-tab">
+                    <ul class="tabs tab-title">
+                        <li class="current"><a href="tab-4">New Products</a></li>
+                        <li class=""><a href="tab-5">Featured Products</a></li>
+                        <li class=""><a href="tab-6">Best Sellers</a></li>
+                    </ul>
+                    <div class="tab-content-cls">
+                        {% if addresses_in_pakistan %}
+                        <div id="tab-4" class="tab-content active default">
+                            <div class="no-slider row">
+                                {% for product in new_products %}
+                                <div class="modal fade bd-example-modal-lg theme-modal" id="quick-view-{{ product.id }}" tabindex="-1" role="dialog"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                        <div class="modal-content quick-view-modal">
+                                            <div class="modal-body" style="background-image: url(/static/assets/images/white.jpg);">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                        aria-hidden="true">&times;</span></button>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-xs-12">
+                                                        <div class="quick-view-img">
+                                                            <img src="{{ product.cover.url }}" alt="" class="img-fluid blur-up lazyload">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 rtl-text">
+                                                        <div class="product-right">
+                                                            <h2>{{ product.title }}</h2>
+                                                            <h3><img height="20" width="20" src="/static/assets/images/pakistan_rupee.png" alt="" style="padding-right: 5px; padding-bottom: 3px;">{{ product.price_pakistani_rupee }}</h3>
+                                                            {% include "add_to_section.html" %}
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-box">
+                                <div class="img-wrapper">
+                                    {% if product.new_on_sale %}
+                                    <div class="lable-block">
+                                        <span class="lable3">new</span> 
+                                        <span class="lable4">on sale</span>
+                                    </div>
+                                    {% else %}
+                                    {% endif %}
+                                    <div class="front">
+                                        <a href="{% url 'product_details' product.slug %}"><img
+                                            src="{{ product.cover.url }}"
+                                            class="img-fluid blur-up lazyload bg-img" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="back">
+                                        <a href="{% url 'product_details' product.slug %}"><img
+                                            src="{{ product.cover.url }}"
+                                            class="img-fluid blur-up lazyload bg-img" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="cart-info cart-wrap">
+                                        <a href=""><i class="ti-shopping-cart"></i></a> 
+                                        {% include "wishlist_section.html" %}
+                                        <a href="#"
+                                            data-toggle="modal" data-target="#quick-view-{{ product.id }}" title="Quick View"><i
+                                                class="ti-search" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="compare.html" title="Compare"><i class="ti-reload" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-detail">
+                                    <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i></div>
+                                    <a href="{% url 'product_details' product.slug %}">
+                                        <h6>{{ product.title }}</h6>
+                                    </a>
+                                    <h4><img height="20" width="20" src="/static/assets/images/pakistan_rupee.png" alt="" style="padding-right: 5px; padding-bottom: 3px;">{{ product.price_pakistani_rupee }}</h4>
+                                    <ul class="color-variant">
+                                        <li class="bg-light0"></li>
+                                        <li class="bg-light1"></li>
+                                        <li class="bg-light2"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        <div id="tab-4" class="tab-content active default">
+                            <div class="no-slider row">
+                                {% for product in new_products %}
+                                <div class="modal fade bd-example-modal-lg theme-modal" id="quick-view-{{ product.id }}" tabindex="-1" role="dialog"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                        <div class="modal-content quick-view-modal">
+                                            <div class="modal-body" style="background-image: url(/static/assets/images/white.jpg);">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                        aria-hidden="true">&times;</span></button>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-xs-12">
+                                                        <div class="quick-view-img"><img src="{{ product.cover.url }}" alt=""
+                                                                class="img-fluid blur-up lazyload"></div>
+                                                    </div>
+                                                    <div class="col-lg-6 rtl-text">
+                                                        <div class="product-right">
+                                                            <h2>{{ product.title }}</h2>
+                                                            <h3>${{ product.price_dollar }}</h3>
+                                                            {% include "add_to_section.html" %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="product-box">
+                                <div class="img-wrapper">
+                                    {% if product.new_on_sale %}
+                                    <div class="lable-block">
+                                        <span class="lable3">new</span> 
+                                        <span class="lable4">on sale</span>
+                                    </div>
+                                    {% else %}
+                                    {% endif %}
+                                    <div class="front">
+                                        <a href="{% url 'product_details' product.slug %}"><img
+                                            src="{{ product.cover.url }}"
+                                            class="img-fluid blur-up lazyload bg-img" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="back">
+                                        <a href="{% url 'product_details' product.slug %}"><img
+                                            src="{{ product.cover.url }}"
+                                            class="img-fluid blur-up lazyload bg-img" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="cart-info cart-wrap">
+                                        <a href=""><i class="ti-shopping-cart"></i></a> 
+                                        {% include "wishlist_section.html" %}
+                                        <a href="#"
+                                            data-toggle="modal" data-target="#quick-view-{{ product.id }}" title="Quick View"><i
+                                                class="ti-search" aria-hidden="true"></i>
+                                        </a>
+                                        <a
+                                            href="compare.html" title="Compare"><i class="ti-reload"
+                                                aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-detail">
+                                    <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i></div>
+                                    <a href="{% url 'product_details' product.slug %}">
+                                        <h6>{{ product.title }}</h6>
+                                    </a>
+                                    <h4>${{ product.price_dollar }}</h4>
+                                    <ul class="color-variant">
+                                        <li class="bg-light0"></li>
+                                        <li class="bg-light1"></li>
+                                        <li class="bg-light2"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="modal fade bd-example-modal-lg theme-modal" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body modal12">
+                                            <div class="container-fluid p-0">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="modal-bg">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                    aria-hidden="true">&times;</span></button>
+                                                            <div class="offer-content"><img src="../assets/images/Offer-banner.png"
+                                                                    class="img-fluid blur-up lazyload" alt="">
+                                                                <h2>newsletter</h2>
+                                                                <form
+                                                                    action="https://pixelstrap.us19.list-manage.com/subscribe/post?u=5a128856334b598b395f1fc9b&amp;id=082f74cbda"
+                                                                    class="auth-form needs-validation" method="post"
+                                                                    id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                                                                    target="_blank">
+                                                                    <div class="form-group mx-sm-3">
+                                                                        <input type="text" class="form-control" name="EMAIL" id="mce-EMAIL"
+                                                                            placeholder="Enter your email" required="required">
+                                                                        <button type="submit" class="btn btn-solid"
+                                                                            id="mc-submit">subscribe</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="tab-content-cls">
+                        {% if addresses_in_pakistan %}
+                        <div id="tab-5" class="tab-content">
+                            <div class="no-slider row">
+                                {% for product in featured_products %}
+                                <div class="modal fade bd-example-modal-lg theme-modal" id="quick-view-featured-{{ product.id }}" tabindex="-1" role="dialog"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                            <div class="modal-content quick-view-modal">
+                                                <div class="modal-body" style="background-image: url(/static/assets/images/white.jpg);">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                            aria-hidden="true">&times;</span></button>
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-xs-12">
+                                                            <div class="quick-view-img"><img src="{{ product.cover.url }}" alt=""
+                                                                    class="img-fluid blur-up lazyload">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 rtl-text">
+                                                            <div class="product-right">
+                                                                <h2>{{ product.title }}</h2>
+                                                                <h3><img height="20" width="20" src="/static/assets/images/pakistan_rupee.png" alt="" style="padding-right: 5px; padding-bottom: 3px;">{{ product.price_pakistani_rupee }}</h3>
+                                                                {% include "add_to_section.html" %}
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="product-box">
+                                <div class="img-wrapper">
+                                    {% if product.new_on_sale %}
+                                    <div class="lable-block">
+                                        <span class="lable3">new</span> 
+                                        <span class="lable4">on sale</span>
+                                    </div>
+                                    {% else %}
+                                    {% endif %}
+                                    <div class="front">
+                                        <a href="{% url 'product_details' product.slug %}"><img
+                                            src="{{ product.cover.url }}"
+                                            class="img-fluid blur-up lazyload bg-img" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="back">
+                                        <a href="{% url 'product_details' product.slug %}"><img
+                                            src="{{ product.cover.url }}"
+                                            class="img-fluid blur-up lazyload bg-img" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="cart-info cart-wrap">
+                                        <a href=""><i class="ti-shopping-cart"></i></a> 
+                                        {% include "wishlist_section.html" %}
+                                        <a href="#"
+                                            data-toggle="modal" data-target="#quick-view-featured-{{ product.id }}" title="Quick View"><i
+                                                class="ti-search" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="compare.html" title="Compare"><i class="ti-reload" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-detail">
+                                    <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i></div>
+                                    <a href="{% url 'product_details' product.slug %}">
+                                        <h6>{{ product.title }}</h6>
+                                    </a>
+                                    <h4><img height="20" width="20" src="/static/assets/images/pakistan_rupee.png" alt="" style="padding-right: 5px; padding-bottom: 3px;">{{ product.price_pakistani_rupee }}</h4>
+                                    <ul class="color-variant">
+                                        <li class="bg-light0"></li>
+                                        <li class="bg-light1"></li>
+                                        <li class="bg-light2"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        <div id="tab-5" class="tab-content">
+                            {% for product in featured_products %}
+                            <div class="no-slider row">
+                                <div class="modal fade bd-example-modal-lg theme-modal" id="quick-view-featured-{{ product.id }}" tabindex="-1" role="dialog"
+                                        aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                        <div class="modal-content quick-view-modal">
+                                            <div class="modal-body" style="background-image: url(/static/assets/images/white.jpg);">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                        aria-hidden="true">&times;</span></button>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-xs-12">
+                                                        <div class="quick-view-img"><img src="{{ product.cover.url }}" alt=""
+                                                                class="img-fluid blur-up lazyload">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 rtl-text">
+                                                        <div class="product-right">
+                                                            <h2>{{ product.title }}</h2>
+                                                            <h3>${{ product.price_dollar }}</h3>
+                                                            {% include "add_to_section.html" %}
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-box">
+                                <div class="img-wrapper">
+                                    {% if product.new_on_sale %}
+                                    <div class="lable-block">
+                                        <span class="lable3">new</span> 
+                                        <span class="lable4">on sale</span>
+                                    </div>
+                                    {% else %}
+                                    {% endif %}
+                                    <div class="front">
+                                        <a href="{% url 'product_details' product.slug %}"><img
+                                            src="{{ product.cover.url }}"
+                                            class="img-fluid blur-up lazyload bg-img" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="back">
+                                        <a href="{% url 'product_details' product.slug %}"><img
+                                            src="{{ product.cover.url }}"
+                                            class="img-fluid blur-up lazyload bg-img" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="cart-info cart-wrap">
+                                        <a href=""><i class="ti-shopping-cart"></i></a> 
+                                        {% include "wishlist_section.html" %}
+                                        <a href="#"
+                                            data-toggle="modal" data-target="#quick-view-featured-{{ product.id }}" title="Quick View"><i
+                                                class="ti-search" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="compare.html" title="Compare"><i class="ti-reload" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-detail">
+                                    <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i></div>
+                                    <a href="{% url 'product_details' product.slug %}">
+                                        <h6>{{ product.title }}</h6>
+                                    </a>
+                                    <h4>$ {{ product.price_dollar }}</h4>
+                                    <ul class="color-variant">
+                                        <li class="bg-light0"></li>
+                                        <li class="bg-light1"></li>
+                                        <li class="bg-light2"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="tab-content-cls">
+                        {% if addresses_in_pakistan %}
+                        <div id="tab-6" class="tab-content">
+                            <div class="no-slider row">
+                                {% for product in best_seller_products %}
+                                <div class="modal fade bd-example-modal-lg theme-modal" id="quick-view-best-seller-{{ product.id }}" tabindex="-1" role="dialog"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                            <div class="modal-content quick-view-modal">
+                                                <div class="modal-body" style="background-image: url(/static/assets/images/white.jpg);">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                            aria-hidden="true">&times;</span></button>
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-xs-12">
+                                                            <div class="quick-view-img"><img src="{{ product.cover.url }}" alt=""
+                                                                    class="img-fluid blur-up lazyload">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 rtl-text">
+                                                            <div class="product-right">
+                                                                <h2>{{ product.title }}</h2>
+                                                                <h3><img height="20" width="20" src="/static/assets/images/pakistan_rupee.png" alt="" style="padding-right: 5px; padding-bottom: 3px;">{{ product.price_pakistani_rupee }}</h3>
+                                                                {% include "add_to_section.html" %}
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="product-box">
+                                <div class="img-wrapper">
+                                    {% if product.new_on_sale %}
+                                    <div class="lable-block">
+                                        <span class="lable3">new</span> 
+                                        <span class="lable4">on sale</span>
+                                    </div>
+                                    {% else %}
+                                    {% endif %}
+                                    <div class="front">
+                                        <a href="{% url 'product_details' product.slug %}"><img
+                                            src="{{ product.cover.url }}"
+                                            class="img-fluid blur-up lazyload bg-img" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="back">
+                                        <a href="{% url 'product_details' product.slug %}"><img
+                                            src="{{ product.cover.url }}"
+                                            class="img-fluid blur-up lazyload bg-img" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="cart-info cart-wrap">
+                                        <a href=""><i class="ti-shopping-cart"></i></a> 
+                                        {% include "wishlist_section.html" %}
+                                        <a href="#"
+                                            data-toggle="modal" data-target="#quick-view-best-seller-{{ product.id }}" title="Quick View"><i
+                                                class="ti-search" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="compare.html" title="Compare"><i class="ti-reload" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-detail">
+                                    <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i></div>
+                                    <a href="{% url 'product_details' product.slug %}">
+                                        <h6>{{ product.title }}</h6>
+                                    </a>
+                                    <h4><img height="20" width="20" src="/static/assets/images/pakistan_rupee.png" alt="" style="padding-right: 5px; padding-bottom: 3px;">{{ product.price_pakistani_rupee }}</h4>
+                                    <ul class="color-variant">
+                                        <li class="bg-light0"></li>
+                                        <li class="bg-light1"></li>
+                                        <li class="bg-light2"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        <div id="tab-6" class="tab-content">
+                            <div class="no-slider row">
+                                {% for product in best_seller_products %}
+                                <div class="modal fade bd-example-modal-lg theme-modal" id="quick-view-best-seller-{{ product.id }}" tabindex="-1" role="dialog"
+                                        aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                        <div class="modal-content quick-view-modal">
+                                            <div class="modal-body" style="background-image: url(/static/assets/images/white.jpg);">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                        aria-hidden="true">&times;</span></button>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-xs-12">
+                                                        <div class="quick-view-img"><img src="{{ product.cover.url }}" alt=""
+                                                                class="img-fluid blur-up lazyload">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 rtl-text">
+                                                        <div class="product-right">
+                                                            <h2>{{ product.title }}</h2>
+                                                            <h3>${{ product.price_dollar }}</h3>
+                                                            {% include "add_to_section.html" %}
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-box">
+                                <div class="img-wrapper">
+                                    {% if product.new_on_sale %}
+                                    <div class="lable-block">
+                                        <span class="lable3">new</span> 
+                                        <span class="lable4">on sale</span>
+                                    </div>
+                                    {% else %}
+                                    {% endif %}
+                                    <div class="front">
+                                        <a href="{% url 'product_details' product.slug %}"><img
+                                            src="{{ product.cover.url }}"
+                                            class="img-fluid blur-up lazyload bg-img" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="back">
+                                        <a href="{% url 'product_details' product.slug %}"><img
+                                            src="{{ product.cover.url }}"
+                                            class="img-fluid blur-up lazyload bg-img" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="cart-info cart-wrap">
+                                        <a href=""><i class="ti-shopping-cart"></i></a> 
+                                        {% include "wishlist_section.html" %}
+                                        <a href="#"
+                                            data-toggle="modal" data-target="#quick-view-best-seller-{{ product.id }}" title="Quick View"><i
+                                                class="ti-search" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="compare.html" title="Compare"><i class="ti-reload" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-detail">
+                                    <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i></div>
+                                    <a href="{% url 'product_details' product.slug %}">
+                                        <h6>{{ product.title }}</h6>
+                                    </a>
+                                    <h4>$ {{ product.price_dollar }}</h4>
+                                    <ul class="color-variant">
+                                        <li class="bg-light0"></li>
+                                        <li class="bg-light1"></li>
+                                        <li class="bg-light2"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</section>

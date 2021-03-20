@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!-- thank-you section start -->
+<section class="section-b-space light-layout">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="success-text"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <h2>Success</h2>
+                    <p>We've confirmed your account successfully! <br> You are just one more step away from setting up your account completely.</p>
+                </div>
+                <div style="text-align: center;">
+                    <a href="{% url 'home' %}" type="button" class="btn btn-solid">Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section ends -->
+{% endblock %}

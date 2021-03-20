@@ -1,0 +1,6 @@
+<form action="{% url 'remove_cart_item' %}" method="POST" id="remove-item-section" style="position: relative; left: 8px; bottom: 2px; display: inline-block;">
+    {% csrf_token %}
+    <button type="submit" id="remove_item" value="{{ item.id }}" class="fabutton" style="background: none; padding: 0px; border: none;">
+        <i class="ti-close" aria-hidden="true"></i>
+    </button>
+</form>

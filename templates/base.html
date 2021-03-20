@@ -1,0 +1,2089 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="multikart">
+    <meta name="keywords" content="multikart">
+    <meta name="author" content="multikart">
+    <link rel="icon" href="/static/assets/images/favicon/12.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/assets/images/favicon/12.png" type="image/x-icon">
+    <title>{% block title %} e-Commerce | Home {% endblock %}</title>
+
+    <!--Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/fontawesome.css">
+
+    <!--Slick slider css-->
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/slick-theme.css">
+
+    <!-- Animate icon -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/animate.css">
+
+    <!-- Themify icon -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/themify-icons.css">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/bootstrap.css">
+
+    <!-- Theme css -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/color12.css" media="screen" id="color">
+
+</head>
+
+<body>
+
+    <!-- loader start -->
+    <div class="loader_skeleton">
+        <header>
+            <div class="top-header d-none d-sm-block top-header-dark2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="header-contact">
+                                <ul>
+                                    <li>Welcome to Our store Multikart</li>
+                                    <li><i class="fa fa-phone" aria-hidden="true"></i>Call Us: 123 - 456 - 7890</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 text-right">
+                            <ul class="header-dropdown">
+                                <li class="mobile-wishlist">
+                                    <a href="{% url 'viewlist_view' %}">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                        wishlist
+                                    </a>
+                                </li>
+                                <li class="onhover-dropdown mobile-account"> <i class="fa fa-user" aria-hidden="true"></i>
+                                    My Account
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container layout3-menu">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="main-menu">
+                            <div class="menu-left around-border">
+                                <div class="navbar"> <a href="#" onclick="openNav()"><i class="fa fa-bars sidebar-bar"
+                                            aria-hidden="true"></i></a>
+                                </div>
+                                <div class="main-menu-right">
+                                    <nav>
+                                        <div class="toggle-nav"><i class="fa fa-bars sidebar-bar"></i></div>
+                                        <ul class="sm pixelstrap sm-horizontal light-font-menu">
+                                            <li>
+                                                <div class="mobile-back text-right">Back<i
+                                                        class="fa fa-angle-right pl-2" aria-hidden="true"></i></div>
+                                            </li>
+                                            <li>
+                                                <a href="#">Home</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">about</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">blogs</a>
+                                            </li>
+                                            <li class="mega">
+                                                <a href="#">become vendor
+                                                </a>
+                                            </li>
+                                            <li><a href="#">pages</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">contact us</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="absolute-logo">
+                                <div class="brand-logo">
+                                    <a href="#"><img alt="" src="/static/assets/images/icon/logo/12.png"></a>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="menu-right pull-right">
+                                    <div>
+                                        <div class="icon-nav d-none d-sm-block">
+                                            <ul>
+                                                <li class="onhover-div mobile-search">
+                                                    <div><img alt="" src="/static/assets/images/icon/layout4/search.png"
+                                                            onclick="openSearch()" class="img-fluid blur-up lazyload">
+                                                        <i class="ti-search" onclick="openSearch()"></i></div>
+                                                </li>
+                                                <li class="onhover-div mobile-setting">
+                                                    <div><img alt="" src="/static/assets/images/icon/layout4/setting.png"
+                                                            class="img-fluid blur-up lazyload"> <i
+                                                            class="ti-settings"></i>
+                                                    </div>
+                                                </li>
+                                                <li class="onhover-div mobile-cart">
+                                                    <div><img alt="" src="/static/assets/images/icon/layout4/cart.png"
+                                                            class="img-fluid blur-up lazyload"> <i
+                                                            class="ti-shopping-cart"></i></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="home-slider">
+            <div class="home"></div>
+        </div>
+        <section class="collection-banner banner-padding banner-furniture">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="ldr-bg">
+                            <div class="contain-banner">
+                                <div>
+                                    <h4></h4>
+                                    <h2></h2>
+                                    <h6></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="ldr-bg">
+                            <div class="contain-banner">
+                                <div>
+                                    <h4></h4>
+                                    <h2></h2>
+                                    <h6></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="collection-banner banner-padding banner-furniture">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="ldr-bg">
+                            <div class="contain-banner">
+                                <div>
+                                    <h4></h4>
+                                    <h2></h2>
+                                    <h6></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="ldr-bg">
+                            <div class="contain-banner">
+                                <div>
+                                    <h4></h4>
+                                    <h2></h2>
+                                    <h6></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container section-b-space">
+            <div class="row section-t-space">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="product-para">
+                        <p class="first"></p>
+                        <p class="second"></p>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="no-slider row">
+                        <div class="product-box">
+                            <div class="img-wrapper"></div>
+                            <div class="product-detail">
+                                <h4></h4>
+                                <h5></h5>
+                                <h5 class="second"></h5>
+                                <h6></h6>
+                            </div>
+                        </div>
+                        <div class="product-box">
+                            <div class="img-wrapper"></div>
+                            <div class="product-detail">
+                                <h4></h4>
+                                <h5></h5>
+                                <h5 class="second"></h5>
+                                <h6></h6>
+                            </div>
+                        </div>
+                        <div class="product-box">
+                            <div class="img-wrapper"></div>
+                            <div class="product-detail">
+                                <h4></h4>
+                                <h5></h5>
+                                <h5 class="second"></h5>
+                                <h6></h6>
+                            </div>
+                        </div>
+                        <div class="product-box">
+                            <div class="img-wrapper"></div>
+                            <div class="product-detail">
+                                <h4></h4>
+                                <h5></h5>
+                                <h5 class="second"></h5>
+                                <h6></h6>
+                            </div>
+                        </div>
+                        <div class="product-box">
+                            <div class="img-wrapper"></div>
+                            <div class="product-detail">
+                                <h4></h4>
+                                <h5></h5>
+                                <h5 class="second"></h5>
+                                <h6></h6>
+                            </div>
+                        </div>
+                        <div class="product-box">
+                            <div class="img-wrapper"></div>
+                            <div class="product-detail">
+                                <h4></h4>
+                                <h5></h5>
+                                <h5 class="second"></h5>
+                                <h6></h6>
+                            </div>
+                        </div>
+                        <div class="product-box">
+                            <div class="img-wrapper"></div>
+                            <div class="product-detail">
+                                <h4></h4>
+                                <h5></h5>
+                                <h5 class="second"></h5>
+                                <h6></h6>
+                            </div>
+                        </div>
+                        <div class="product-box">
+                            <div class="img-wrapper"></div>
+                            <div class="product-detail">
+                                <h4></h4>
+                                <h5></h5>
+                                <h5 class="second"></h5>
+                                <h6></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- loader end -->
+
+
+    <header>
+        <div class="mobile-fix-option"></div>
+        <div class="top-header top-header-dark2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="header-contact">
+                            <ul>
+                                <li>Welcome to Our store Multikart</li>
+                                <li><i class="fa fa-phone" aria-hidden="true"></i>Call Us: 123 - 456 - 7890</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-right">
+                        <ul class="header-dropdown">
+                            <li class="mobile-wishlist"><a href="{% url 'viewlist_view' %}"><i class="fa fa-heart" aria-hidden="true"></i>
+                                    wishlist</a></li>
+                            <li class="onhover-dropdown mobile-account"> <i class="fa fa-user" aria-hidden="true"></i>
+                                My Account
+                                {% if user.is_authenticated %}
+                                <ul class="onhover-show-div">
+                                    <li><a href="{% url 'my_profile' %}" data-lng="en">Profile</a></li>
+                                    <li><a href="{% url 'logout' %}" data-lng="es">Logout</a></li>
+                                </ul>
+                                {% else %}
+                                <ul class="onhover-show-div">
+                                    <li><a href="{% url 'login_view' %}" data-lng="en">Login</a></li>
+                                    <li><a href="{% url 'register' %}" data-lng="es">Sign Up</a></li>
+                                </ul>
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container layout3-menu">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="main-menu">
+                        <div class="menu-left around-border">
+                            <div class="navbar"> <a href="#" onclick="openNav()"><i class="fa fa-bars sidebar-bar"
+                                        aria-hidden="true"></i></a>
+                                <div id="mySidenav" class="sidenav">
+                                    <a href="javascript:void(0)" class="sidebar-overlay" onclick="closeNav()"></a>
+                                    <nav>
+                                        <a href="javascript:void(0)" onclick="closeNav()">
+                                            <div class="sidebar-back text-left"><i class="fa fa-angle-left pr-2"
+                                                    aria-hidden="true"></i> Back</div>
+                                        </a>
+                                        <ul id="sub-menu" class="sm pixelstrap sm-vertical">
+                                            {% for category in categories %}
+                                            <li> <a href="{% url 'products_by_category' category.id %}">{{ category.title }}</a>
+                                            </li>
+                                            {% endfor %}
+                                            <!--<li> <a href="#">bags</a>
+                                            </li>
+                                            <li> <a href="#">footwear</a>
+                                            </li>
+                                            <li><a href="#">watches</a></li>
+                                            <li> <a href="#">Accessories</a>
+                                            </li>
+                                            <li><a href="#">house of design</a></li>
+                                            <li> <a href="#">beauty & personal care</a>
+                                            </li>
+                                            <li><a href="#">home & decor</a></li>
+                                            <li><a href="#">kitchen</a></li>-->
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="main-menu-right">
+                                <nav id="main-nav">
+                                    <div class="toggle-nav"><i class="fa fa-bars sidebar-bar"></i></div>
+                                    <ul id="main-menu" class="sm pixelstrap sm-horizontal light-font-menu">
+                                        <li>
+                                            <div class="mobile-back text-right">Back<i class="fa fa-angle-right pl-2"
+                                                    aria-hidden="true"></i></div>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'home' %}">Home</a>
+                                            
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'about' %}">about</a>
+                                     
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'blogs' %}">blogs</a>
+                                        </li>
+                                        <li class="mega" id="hover-cls">
+                                            <a href="{% url 'become_vendor' %}">become vendor
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">pages</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'contact' %}">contact us</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="absolute-logo">
+                            <div class="brand-logo">
+                                <a href="{% url 'home' %}"><img alt="" src="/static/assets/images/icon/logo/12.png"></a>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="menu-right pull-right">
+                                <div>
+                                    <div class="icon-nav">
+                                        <ul>
+                                            <li class="onhover-div mobile-search">
+                                                <div>
+                                                    <img alt="" src="/static/assets/images/icon/layout4/search.png"
+                                                        onclick="openSearch()" class="img-fluid blur-up lazyload"> <i
+                                                        class="ti-search" onclick="openSearch()"></i>
+                                                </div>
+                                                <div id="search-overlay" class="search-overlay">
+                                                    <div> <span class="closebtn" onclick="closeSearch()"
+                                                            title="Close Overlay">×</span>
+                                                        <div class="overlay-content">
+                                                            <div class="container">
+                                                                <div class="row">
+                                                                    <div class="col-xl-12">
+                                                                        <form action="{% url 'search_for_product' %}" method="GET">
+                                                                            {% csrf_token %}
+                                                                            <div class="form-group">
+                                                                                <input type="text" class="form-control"
+                                                                                    id="q" name="q"
+                                                                                    placeholder="Search a Product">
+                                                                            </div>
+                                                                            <button type="submit"
+                                                                                class="btn btn-primary"><i
+                                                                                    class="fa fa-search"></i></button>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="onhover-div mobile-setting">
+                                                <div><img alt="" src="/static/assets/images/icon/layout4/setting.png"
+                                                        class="img-fluid blur-up lazyload"> <i class="ti-settings"></i>
+                                                </div>
+                                                <div class="show-div setting">
+                                                    <h6>language</h6>
+                                                    <ul>
+                                                        <li><a href="#">english</a></li>
+                                                        <li><a href="#">french</a></li>
+                                                    </ul>
+                                                    <h6>currency</h6>
+                                                    <ul class="list-inline">
+                                                        <li><a href="#">euro</a></li>
+                                                        <li><a href="#">rupees</a></li>
+                                                        <li><a href="#">pound</a></li>
+                                                        <li><a href="#">doller</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="onhover-div mobile-cart">
+                                                <div>
+                                                    <img alt="" src="/static/assets/images/icon/layout4/cart.png"
+                                                        class="img-fluid blur-up lazyload"> <i
+                                                        class="ti-shopping-cart"></i>
+                                                
+                                                </div>
+                                                {% if addresses_in_pakistan %}
+                                                <ul class="show-div shopping-cart">
+                                                    {% for item in cart_items %}
+                                                    <li>
+                                                        <div class="media">
+                                                            <a href="{% url 'product_details' item.product.slug %}"><img alt="{{ item.product.cover.url }}" class="mr-3"
+                                                                    src="{{ item.product.cover.url }}"></a>
+                                                            <div class="media-body">
+                                                                <a href="#">
+                                                                    <h4>{{ item.product.title }}</h4>
+                                                                </a>
+                                                                <h4><span>{{ item.quantity }} x PKR {{ item.product.price_pakistani_rupee }}</span></h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="close-circle"><a href="#"><i class="fa fa-times"
+                                                                    aria-hidden="true"></i></a></div>
+                                                    </li>
+                                                    {% endfor %}
+                                                    <li>
+                                                        <div class="total">
+                                                            <h5>subtotal : <span>PKR{{ total_amount_rupee }}</span></h5>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="buttons"><a href="{% url 'cart_info' %}" class="view-cart">view
+                                                                cart</a> <a href="#" class="checkout">checkout</a></div>
+                                                    </li>
+                                                </ul>
+                                                {% else %}
+                                                <ul class="show-div shopping-cart">
+                                                    {% for item in cart_items %}
+                                                    <li>
+                                                        <div class="media">
+                                                            <a href="{% url 'product_details' item.product.slug %}"><img alt="{{ item.product.cover.url }}" class="mr-3"
+                                                                    src="{{ item.product.cover.url }}"></a>
+                                                            <div class="media-body">
+                                                                <a href="#">
+                                                                    <h4>{{ item.product.title }}</h4>
+                                                                </a>
+                                                                <h4><span>{{ item.quantity }} x $ {{ item.product.price_dollar }}</span></h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="close-circle"><a href="#"><i class="fa fa-times"
+                                                                    aria-hidden="true"></i></a></div>
+                                                    </li>
+                                                    {% endfor %}
+                                                    <li>
+                                                        <div class="total">
+                                                            <h5>subtotal : <span>${{ total_price }}</span></h5>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="buttons"><a href="{% url 'cart_info' %}" class="view-cart">view
+                                                                cart</a> <a href="#" class="checkout">checkout</a></div>
+                                                    </li>
+                                                </ul>
+                                                {% endif %}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    {% block content %}
+    <!-- Home slider -->
+    <section class="p-0">
+        <div class="slide-1 home-slider">
+            <div>
+                <div class="home text-center">
+                    <img src="/static/assets/images/home-banner/19.jpg" alt="" class="bg-img blur-up lazyload">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="slider-contain">
+                                    <div>
+                                        <h4>welcome to fashion</h4>
+                                        <h1>woman fashion</h1><a href="#" class="btn btn-solid">shop now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="home text-center">
+                    <img src="/static/assets/images/home-banner/20.jpg" alt="" class="bg-img blur-up lazyload">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="slider-contain">
+                                    <div>
+                                        <h4>welcome to fashion</h4>
+                                        <h1>top collection</h1><a href="#" class="btn btn-solid">shop now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Home slider end -->
+
+
+    <!-- collection banner -->
+    <section class="banner-padding banner-furniture ratio2_1">
+        <div class="container-fluid">
+            <div class="row partition3">
+                <div class="col-md-6">
+                    <a href="#">
+                        <div class="collection-banner p-left text-left">
+                            <div class="img-part">
+                                <img src="../assets/images/fashion/1.jpg" alt=""
+                                    class="img-fluid blur-up lazyload bg-img">
+                            </div>
+                            <div class="contain-banner">
+                                <div>
+                                    <h4>save 30%</h4>
+                                    <h2>women</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="#">
+                        <div class="collection-banner p-left text-left">
+                            <div class="img-part">
+                                <img src="../assets/images/fashion/2.jpg" alt=""
+                                    class="img-fluid blur-up lazyload bg-img">
+                            </div>
+                            <div class="contain-banner">
+                                <div>
+                                    <h4>save 60%</h4>
+                                    <h2>watch</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- collection banner end -->
+
+
+    <!-- collection banner -->
+    <section class="banner-padding banner-furniture ratio2_1">
+        <div class="container-fluid">
+            <div class="row partition3">
+                <div class="col-md-6">
+                    <a href="#">
+                        <div class="collection-banner p-left text-left">
+                            <div class="img-part">
+                                <img src="/static/assets/images/fashion/3.jpg" alt=""
+                                    class="img-fluid blur-up lazyload bg-img">
+                            </div>
+                            <div class="contain-banner">
+                                <div>
+                                    <h4>save 30%</h4>
+                                    <h2>sandle</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="#">
+                        <div class="collection-banner p-left text-left">
+                            <div class="img-part">
+                                <img src="/static/assets/images/fashion/4.jpg" alt=""
+                                    class="img-fluid blur-up lazyload bg-img">
+                            </div>
+                            <div class="contain-banner">
+                                <div>
+                                    <h4>save 60%</h4>
+                                    <h2>kids</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- collection banner end -->
+
+
+    <!-- Tab product -->
+    <div class="title1 section-t-space">
+        <h4>exclusive products</h4>
+        <h2 class="title-inner1">special products</h2>
+    </div>
+    <section class="section-b-space p-t-0 ratio_asos">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="theme-tab">
+                        <ul class="tabs tab-title">
+                            <li class="current"><a href="tab-4">New Products</a></li>
+                            <li class=""><a href="tab-5">Featured Products</a></li>
+                            <li class=""><a href="tab-6">Best Sellers</a></li>
+                        </ul>
+                        <div class="tab-content-cls">
+                            {% if addresses_in_pakistan %}
+                            <div id="tab-4" class="tab-content active default">
+                                <div class="no-slider row">
+                                    {% for product in new_products %}
+                                    <div class="modal fade bd-example-modal-lg theme-modal" id="quick-view-{{ product.id }}" tabindex="-1" role="dialog"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                            <div class="modal-content quick-view-modal">
+                                                <div class="modal-body" style="background-image: url(/static/assets/images/white.jpg);">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                            aria-hidden="true">&times;</span></button>
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-xs-12">
+                                                            <div class="quick-view-img">
+                                                                <img src="{{ product.cover.url }}" alt="" class="img-fluid blur-up lazyload">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 rtl-text">
+                                                            <div class="product-right">
+                                                                <h2>{{ product.title }}</h2>
+                                                                <h3><img height="20" width="20" src="/static/assets/images/pakistan_rupee.png" alt="" style="padding-right: 5px; padding-bottom: 3px;">{{ product.price_pakistani_rupee }}</h3>
+                                                                {% include "add_to_section.html" %}
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-box">
+                                    <div class="img-wrapper">
+                                        {% if product.new_on_sale %}
+                                        <div class="lable-block">
+                                            <span class="lable3">new</span> 
+                                            <span class="lable4">on sale</span>
+                                        </div>
+                                        {% else %}
+                                        {% endif %}
+                                        <div class="front">
+                                            <a href="{% url 'product_details' product.slug %}"><img
+                                                src="{{ product.cover.url }}"
+                                                class="img-fluid blur-up lazyload bg-img" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="back">
+                                            <a href="{% url 'product_details' product.slug %}"><img
+                                                src="{{ product.cover.url }}"
+                                                class="img-fluid blur-up lazyload bg-img" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="cart-info cart-wrap">
+                                            <a href=""><i class="ti-shopping-cart"></i></a>
+                                            {% if product.id in all_wishlist_items %}
+                                            {% else %}
+                                            {% include "wishlist_section.html" %}
+                                            {% endif %}
+                                            <a href="#"
+                                                data-toggle="modal" data-target="#quick-view-{{ product.id }}" title="Quick View"><i
+                                                    class="ti-search" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="compare.html" title="Compare"><i class="ti-reload" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-detail">
+                                        <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i></div>
+                                        <a href="{% url 'product_details' product.slug %}">
+                                            <h6>{{ product.title }}</h6>
+                                        </a>
+                                        <h4>
+                                            {% if product.discounted_price %}
+                                            <h4>{% if addresses_in_pakistan %}
+                                                PKR {{ product.discounted_price_rupee }}
+                                                {% else %}
+                                                ${{ product.discounted_price }}
+                                                {% endif %}<del>{% if addresses_in_pakistan %}
+                                                PKR{{ product.price_pakistani_rupee }}
+                                                {% else %}
+                                                ${{ product.price_dollar }}
+                                                {% endif %}</del></h4>
+                                            {% else %}
+                                            <h4>
+                                                {% if addresses_in_pakistan %}
+                                                PKR {{ product.price_pakistani_rupee }}
+                                                {% else %}
+                                                ${{ product.price_dollar }}
+                                                {% endif %}
+                                            </h4>
+                                            {% endif %}
+                                        </h4>
+                                        <ul class="color-variant">
+                                            <li class="bg-light0"></li>
+                                            <li class="bg-light1"></li>
+                                            <li class="bg-light2"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            <div id="tab-4" class="tab-content active default">
+                                <div class="no-slider row">
+                                    {% for product in new_products %}
+                                    <div class="modal fade bd-example-modal-lg theme-modal" id="quick-view-{{ product.id }}" tabindex="-1" role="dialog"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                            <div class="modal-content quick-view-modal">
+                                                <div class="modal-body" style="background-image: url(/static/assets/images/white.jpg);">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                            aria-hidden="true">&times;</span></button>
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-xs-12">
+                                                            <div class="quick-view-img"><img src="{{ product.cover.url }}" alt=""
+                                                                    class="img-fluid blur-up lazyload"></div>
+                                                        </div>
+                                                        <div class="col-lg-6 rtl-text">
+                                                            <div class="product-right">
+                                                                <h2>{{ product.title }}</h2>
+                                                                <h3>${{ product.price_dollar }}</h3>
+                                                                {% include "add_to_section.html" %}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="product-box">
+                                    <div class="img-wrapper">
+                                        {% if product.new_on_sale %}
+                                        <div class="lable-block">
+                                            <span class="lable3">new</span> 
+                                            <span class="lable4">on sale</span>
+                                        </div>
+                                        {% else %}
+                                        {% endif %}
+                                        <div class="front">
+                                            <a href="{% url 'product_details' product.slug %}"><img
+                                                src="{{ product.cover.url }}"
+                                                class="img-fluid blur-up lazyload bg-img" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="back">
+                                            <a href="{% url 'product_details' product.slug %}"><img
+                                                src="{{ product.cover.url }}"
+                                                class="img-fluid blur-up lazyload bg-img" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="cart-info cart-wrap">
+                                            <a href=""><i class="ti-shopping-cart"></i></a> 
+                                            {% if product.title in all_wishlist_items %}
+                                            {% else %}
+                                            {% include "wishlist_section.html" %}
+                                            {% endif %}
+                                            <a href="#"
+                                                data-toggle="modal" data-target="#quick-view-{{ product.id }}" title="Quick View"><i
+                                                    class="ti-search" aria-hidden="true"></i>
+                                            </a>
+                                            <a
+                                                href="compare.html" title="Compare"><i class="ti-reload"
+                                                    aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-detail">
+                                        <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i></div>
+                                        <a href="{% url 'product_details' product.slug %}">
+                                            <h6>{{ product.title }}</h6>
+                                        </a>
+                                        <h4>
+                                            {% if product.discounted_price %}
+                                            <h4>{% if addresses_in_pakistan %}
+                                                PKR{{ product.discounted_price_rupee }}
+                                                {% else %}
+                                                ${{ product.discounted_price }}
+                                                {% endif %}<del>{% if addresses_in_pakistan %}
+                                                PKR{{ product.price_pakistani_rupee }}
+                                                {% else %}
+                                                ${{ product.price_dollar }}
+                                                {% endif %}</del></h4>
+                                            {% else %}
+                                            <h4>
+                                                {% if addresses_in_pakistan %}
+                                                PKR {{ product.price_pakistani_rupee }}
+                                                {% else %}
+                                                ${{ product.price_dollar }}
+                                                {% endif %}
+                                            </h4>
+                                            {% endif %}
+                                        </h4>
+                                        <ul class="color-variant">
+                                            <li class="bg-light0"></li>
+                                            <li class="bg-light1"></li>
+                                            <li class="bg-light2"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="modal fade bd-example-modal-lg theme-modal" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-body modal12">
+                                                <div class="container-fluid p-0">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="modal-bg">
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                        aria-hidden="true">&times;</span></button>
+                                                                <div class="offer-content"><img src="../assets/images/Offer-banner.png"
+                                                                        class="img-fluid blur-up lazyload" alt="">
+                                                                    <h2>newsletter</h2>
+                                                                    <form
+                                                                        action="https://pixelstrap.us19.list-manage.com/subscribe/post?u=5a128856334b598b395f1fc9b&amp;id=082f74cbda"
+                                                                        class="auth-form needs-validation" method="post"
+                                                                        id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                                                                        target="_blank">
+                                                                        <div class="form-group mx-sm-3">
+                                                                            <input type="text" class="form-control" name="EMAIL" id="mce-EMAIL"
+                                                                                placeholder="Enter your email" required="required">
+                                                                            <button type="submit" class="btn btn-solid"
+                                                                                id="mc-submit">subscribe</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="tab-content-cls">
+                            {% if addresses_in_pakistan %}
+                            <div id="tab-5" class="tab-content">
+                                <div class="no-slider row">
+                                    {% for product in featured_products %}
+                                    <div class="modal fade bd-example-modal-lg theme-modal" id="quick-view-featured-{{ product.id }}" tabindex="-1" role="dialog"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                                <div class="modal-content quick-view-modal">
+                                                    <div class="modal-body" style="background-image: url(/static/assets/images/white.jpg);">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span></button>
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-xs-12">
+                                                                <div class="quick-view-img"><img src="{{ product.cover.url }}" alt=""
+                                                                        class="img-fluid blur-up lazyload">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 rtl-text">
+                                                                <div class="product-right">
+                                                                    <h2>{{ product.title }}</h2>
+                                                                    <h3><img height="20" width="20" src="/static/assets/images/pakistan_rupee.png" alt="" style="padding-right: 5px; padding-bottom: 3px;">{{ product.price_pakistani_rupee }}</h3>
+                                                                    {% include "add_to_section.html" %}
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="product-box">
+                                    <div class="img-wrapper">
+                                        {% if product.new_on_sale %}
+                                        <div class="lable-block">
+                                            <span class="lable3">new</span> 
+                                            <span class="lable4">on sale</span>
+                                        </div>
+                                        {% else %}
+                                        {% endif %}
+                                        <div class="front">
+                                            <a href="{% url 'product_details' product.slug %}"><img
+                                                src="{{ product.cover.url }}"
+                                                class="img-fluid blur-up lazyload bg-img" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="back">
+                                            <a href="{% url 'product_details' product.slug %}"><img
+                                                src="{{ product.cover.url }}"
+                                                class="img-fluid blur-up lazyload bg-img" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="cart-info cart-wrap">
+                                            <a href=""><i class="ti-shopping-cart"></i></a> 
+                                            {% if product in all_wishlist_items %}
+                                            {% else %}
+                                            {% include "wishlist_section.html" %}
+                                            {% endif %}
+                                            <a href="#"
+                                                data-toggle="modal" data-target="#quick-view-featured-{{ product.id }}" title="Quick View"><i
+                                                    class="ti-search" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="compare.html" title="Compare"><i class="ti-reload" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-detail">
+                                        <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i></div>
+                                        <a href="{% url 'product_details' product.slug %}">
+                                            <h6>{{ product.title }}</h6>
+                                        </a>
+                                        {% if product.discounted_price %}
+                                        <h4>{% if addresses_in_pakistan %}
+                                            PKR {{ product.discounted_price_rupee }}
+                                            {% else %}
+                                            ${{ product.discounted_price }}
+                                            {% endif %}<del>{% if addresses_in_pakistan %}
+                                            PKR{{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}</del></h4>
+                                        {% else %}
+                                        <h4>
+                                            {% if addresses_in_pakistan %}
+                                            PKR{{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}
+                                        </h4>
+                                        {% endif %}
+                                        <ul class="color-variant">
+                                            <li class="bg-light0"></li>
+                                            <li class="bg-light1"></li>
+                                            <li class="bg-light2"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            <div id="tab-5" class="tab-content">
+                                <div class="no-slider row">
+                                {% for product in featured_products %}
+                                    <div class="modal fade bd-example-modal-lg theme-modal" id="quick-view-featured-{{ product.id }}" tabindex="-1" role="dialog"
+                                            aria-hidden="true">
+                                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                            <div class="modal-content quick-view-modal">
+                                                <div class="modal-body" style="background-image: url(/static/assets/images/white.jpg);">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                            aria-hidden="true">&times;</span></button>
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-xs-12">
+                                                            <div class="quick-view-img"><img src="{{ product.cover.url }}" alt=""
+                                                                    class="img-fluid blur-up lazyload">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 rtl-text">
+                                                            <div class="product-right">
+                                                                <h2>{{ product.title }}</h2>
+                                                                <h3>${{ product.price_dollar }}</h3>
+                                                                {% include "add_to_section.html" %}
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-box">
+                                    <div class="img-wrapper">
+                                        {% if product.new_on_sale %}
+                                        <div class="lable-block">
+                                            <span class="lable3">new</span> 
+                                            <span class="lable4">on sale</span>
+                                        </div>
+                                        {% else %}
+                                        {% endif %}
+                                        <div class="front">
+                                            <a href="{% url 'product_details' product.slug %}"><img
+                                                src="{{ product.cover.url }}"
+                                                class="img-fluid blur-up lazyload bg-img" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="back">
+                                            <a href="{% url 'product_details' product.slug %}"><img
+                                                src="{{ product.cover.url }}"
+                                                class="img-fluid blur-up lazyload bg-img" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="cart-info cart-wrap">
+                                            <a href=""><i class="ti-shopping-cart"></i></a> 
+                                            {% if product in all_wishlist_items %}
+                                            {% else %}
+                                            {% include "wishlist_section.html" %}
+                                            {% endif %}
+                                            <a href="#"
+                                                data-toggle="modal" data-target="#quick-view-featured-{{ product.id }}" title="Quick View"><i
+                                                    class="ti-search" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="compare.html" title="Compare"><i class="ti-reload" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-detail">
+                                        <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i></div>
+                                        <a href="{% url 'product_details' product.slug %}">
+                                            <h6>{{ product.title }}</h6>
+                                        </a>
+                                        <h4>
+                                            {% if product.discounted_price %}
+                                            <h4>{% if addresses_in_pakistan %}
+                                                PKR{{ product.discounted_price_rupee }}
+                                                {% else %}
+                                                ${{ product.discounted_price }}
+                                                {% endif %}<del>{% if addresses_in_pakistan %}
+                                                PKR{{ product.price_pakistani_rupee }}
+                                                {% else %}
+                                                ${{ product.price_dollar }}
+                                                {% endif %}</del></h4>
+                                            {% else %}
+                                            <h4>
+                                                {% if addresses_in_pakistan %}
+                                                PKR {{ product.price_pakistani_rupee }}
+                                                {% else %}
+                                                ${{ product.price_dollar }}
+                                                {% endif %}
+                                            </h4>
+                                            {% endif %}
+                                        </h4>
+                                        <ul class="color-variant">
+                                            <li class="bg-light0"></li>
+                                            <li class="bg-light1"></li>
+                                            <li class="bg-light2"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="tab-content-cls">
+                            {% if addresses_in_pakistan %}
+                            <div id="tab-6" class="tab-content">
+                                <div class="no-slider row">
+                                    {% for product in best_seller_products %}
+                                    <div class="modal fade bd-example-modal-lg theme-modal" id="quick-view-best-seller-{{ product.id }}" tabindex="-1" role="dialog"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                                <div class="modal-content quick-view-modal">
+                                                    <div class="modal-body" style="background-image: url(/static/assets/images/white.jpg);">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span></button>
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-xs-12">
+                                                                <div class="quick-view-img"><img src="{{ product.cover.url }}" alt=""
+                                                                        class="img-fluid blur-up lazyload">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 rtl-text">
+                                                                <div class="product-right">
+                                                                    <h2>{{ product.title }}</h2>
+                                                                    <h3><img height="20" width="20" src="/static/assets/images/pakistan_rupee.png" alt="" style="padding-right: 5px; padding-bottom: 3px;">{{ product.price_pakistani_rupee }}</h3>
+                                                                    {% include "add_to_section.html" %}
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="product-box">
+                                    <div class="img-wrapper">
+                                        {% if product.new_on_sale %}
+                                        <div class="lable-block">
+                                            <span class="lable3">new</span> 
+                                            <span class="lable4">on sale</span>
+                                        </div>
+                                        {% else %}
+                                        {% endif %}
+                                        <div class="front">
+                                            <a href="{% url 'product_details' product.slug %}"><img
+                                                src="{{ product.cover.url }}"
+                                                class="img-fluid blur-up lazyload bg-img" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="back">
+                                            <a href="{% url 'product_details' product.slug %}"><img
+                                                src="{{ product.cover.url }}"
+                                                class="img-fluid blur-up lazyload bg-img" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="cart-info cart-wrap">
+                                            <a href=""><i class="ti-shopping-cart"></i></a> 
+                                            {% if product in all_wishlist_items %}
+                                            {% else %}
+                                            {% include "wishlist_section.html" %}
+                                            {% endif %}
+                                            <a href="#"
+                                                data-toggle="modal" data-target="#quick-view-best-seller-{{ product.id }}" title="Quick View"><i
+                                                    class="ti-search" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="compare.html" title="Compare"><i class="ti-reload" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-detail">
+                                        <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i></div>
+                                        <a href="{% url 'product_details' product.slug %}">
+                                            <h6>{{ product.title }}</h6>
+                                        </a>
+                                        {% if product.discounted_price %}
+                                        <h4>{% if addresses_in_pakistan %}
+                                            PKR {{ product.discounted_price_rupee }}
+                                            {% else %}
+                                            ${{ product.discounted_price }}
+                                            {% endif %}<del>{% if addresses_in_pakistan %}
+                                            PKR{{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}</del></h4>
+                                        {% else %}
+                                        <h4>
+                                            {% if addresses_in_pakistan %}
+                                            PKR {{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}
+                                        </h4>
+                                        {% endif %}
+                                        <ul class="color-variant">
+                                            <li class="bg-light0"></li>
+                                            <li class="bg-light1"></li>
+                                            <li class="bg-light2"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            <div id="tab-6" class="tab-content">
+                                <div class="no-slider row">
+                                    {% for product in best_seller_products %}
+                                    <div class="modal fade bd-example-modal-lg theme-modal" id="quick-view-best-seller-{{ product.id }}" tabindex="-1" role="dialog"
+                                            aria-hidden="true">
+                                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                            <div class="modal-content quick-view-modal">
+                                                <div class="modal-body" style="background-image: url(/static/assets/images/white.jpg);">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                            aria-hidden="true">&times;</span></button>
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-xs-12">
+                                                            <div class="quick-view-img"><img src="{{ product.cover.url }}" alt=""
+                                                                    class="img-fluid blur-up lazyload">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 rtl-text">
+                                                            <div class="product-right">
+                                                                <h2>{{ product.title }}</h2>
+                                                                <h3>${{ product.price_dollar }}</h3>
+                                                                {% include "add_to_section.html" %}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <div class="product-box">
+                                    <div class="img-wrapper">
+                                        {% if product.new_on_sale %}
+                                        <div class="lable-block">
+                                            <span class="lable3">new</span> 
+                                            <span class="lable4">on sale</span>
+                                        </div>
+                                        {% else %}
+                                        {% endif %}
+                                        <div class="front">
+                                            <a href="{% url 'product_details' product.slug %}"><img
+                                                src="{{ product.cover.url }}"
+                                                class="img-fluid blur-up lazyload bg-img" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="back">
+                                            <a href="{% url 'product_details' product.slug %}"><img
+                                                src="{{ product.cover.url }}"
+                                                class="img-fluid blur-up lazyload bg-img" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="cart-info cart-wrap">
+                                            <a href=""><i class="ti-shopping-cart"></i></a> 
+                                            {% if product in all_wishlist_items %}
+                                            {% else %}
+                                            {% include "wishlist_section.html" %}
+                                            {% endif %}
+                                            <a href="#"
+                                                data-toggle="modal" data-target="#quick-view-best-seller-{{ product.id }}" title="Quick View"><i
+                                                    class="ti-search" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="compare.html" title="Compare"><i class="ti-reload" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-detail">
+                                        <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i></div>
+                                        <a href="{% url 'product_details' product.slug %}">
+                                            <h6>{{ product.title }}</h6>
+                                        </a>
+                                        {% if product.discounted_price %}
+                                        <h4>{% if addresses_in_pakistan %}
+                                            PKR {{ product.discounted_price_rupee }}
+                                            {% else %}
+                                            ${{ product.discounted_price }}
+                                            {% endif %}<del>{% if addresses_in_pakistan %}
+                                            PKR{{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}</del></h4>
+                                        {% else %}
+                                        <h4>
+                                            {% if addresses_in_pakistan %}
+                                            PKR {{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}
+                                        </h4>
+                                        {% endif %}
+                                        <ul class="color-variant">
+                                            <li class="bg-light0"></li>
+                                            <li class="bg-light1"></li>
+                                            <li class="bg-light2"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tab product end -->
+
+
+    <!-- Parallax banner -->
+    <section class="p-0">
+        <div class="full-banner parallax text-center p-left">
+            <img src="/static/assets/images/parallax/13.jpg" alt="" class="bg-img blur-up lazyload">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="banner-contain">
+                            <h2>2018</h2>
+                            <h3>fashion trends</h3>
+                            <h4>special offer</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Parallax banner end -->
+
+
+    <!-- product slider -->
+    <section class="">
+        <div class="container">
+            <div class="row multiple-slider">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="theme-card">
+                        <h5 class="title-border">new products</h5>
+                        <div class="offer-slider slide-1">
+                            <div>
+                                {% for product in new_products.all|slice:"0:3" %}
+                                <div class="media">
+                                    <a href="{% url 'product_details' product.slug %}"><img class="img-fluid blur-up lazyload"
+                                            src="{{ product.cover.url }}" alt="{{ product.title }}"></a>
+                                    <div class="media-body align-self-center">
+                                        <a href="{% url 'product_details' product.slug %}">
+                                            <h6>{{ product.title }}</h6>
+                                        </a>
+                                        {% if product.discounted_price %}
+                                        <h4>{% if addresses_in_pakistan %}
+                                            PKR {{ product.discounted_price_rupee }}
+                                            {% else %}
+                                            ${{ product.discounted_price }}
+                                            {% endif %}<del>{% if addresses_in_pakistan %}
+                                            PKR{{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}</del></h4>
+                                        {% else %}
+                                        <h4>
+                                            {% if addresses_in_pakistan %}
+                                            PKR {{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}
+                                        </h4>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div>
+                                {% for product in new_products.all|slice:"3:6" %}
+                                <div class="media">
+                                    <a href="{% url 'product_details' product.slug %}"><img class="img-fluid blur-up lazyload"
+                                            src="{{ product.cover.url }}" alt="{{ product.title }}"></a>
+                                    <div class="media-body align-self-center">
+                                        <a href="{% url 'product_details' product.slug %}">
+                                            <h6>{{ product.title }}</h6>
+                                        </a>
+                                        {% if product.discounted_price %}
+                                        <h4>{% if addresses_in_pakistan %}
+                                            PKR {{ product.discounted_price_rupee }}
+                                            {% else %}
+                                            ${{ product.discounted_price }}
+                                            {% endif %}<del>{% if addresses_in_pakistan %}
+                                            PKR{{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}</del></h4>
+                                        {% else %}
+                                        <h4>
+                                            {% if addresses_in_pakistan %}
+                                            PKR {{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}
+                                        </h4>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="theme-card">
+                        <h5 class="title-border">feature product</h5>
+                        <div class="offer-slider slide-1">
+                            <div>
+                                {% for product in featured_products.all|slice:"0:3" %}
+                                <div class="media">
+                                    <a href="{% url 'product_details' product.slug %}"><img class="img-fluid blur-up lazyload"
+                                            src="{{ product.cover.url }}" alt="{{ product.title }}"></a>
+                                    <div class="media-body align-self-center">
+                                        <a href="{% url 'product_details' product.slug %}">
+                                            <h6>{{ product.title }}</h6>
+                                        </a>
+                                        {% if product.discounted_price %}
+                                        <h4>{% if addresses_in_pakistan %}
+                                            PKR {{ product.discounted_price_rupee }}
+                                            {% else %}
+                                            ${{ product.discounted_price }}
+                                            {% endif %}<del>{% if addresses_in_pakistan %}
+                                            PKR{{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}</del></h4>
+                                        {% else %}
+                                        <h4>
+                                            {% if addresses_in_pakistan %}
+                                            PKR {{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}
+                                        </h4>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div>
+                                {% for product in featured_products.all|slice:"3:6" %}
+                                <div class="media">
+                                    <a href="{% url 'product_details' product.slug %}"><img class="img-fluid blur-up lazyload"
+                                            src="{{ product.cover.url }}" alt="{{ product.title }}"></a>
+                                    <div class="media-body align-self-center">
+                                        <a href="{% url 'product_details' product.slug %}">
+                                            <h6>{{ product.title }}</h6>
+                                        </a>
+                                        {% if product.discounted_price %}
+                                        <h4>{% if addresses_in_pakistan %}
+                                            PKR {{ product.discounted_price_rupee }}
+                                            {% else %}
+                                            ${{ product.discounted_price }}
+                                            {% endif %}<del>{% if addresses_in_pakistan %}
+                                            PKR{{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}</del></h4>
+                                        {% else %}
+                                        <h4>
+                                            {% if addresses_in_pakistan %}
+                                            PKR {{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}
+                                        </h4>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="theme-card">
+                        <h5 class="title-border">best seller</h5>
+                        <div class="offer-slider slide-1">
+                            <div>
+                                {% for product in best_seller_products.all|slice:"0:3" %}
+                                <div class="media">
+                                    <a href="{% url 'product_details' product.slug %}"><img class="img-fluid blur-up lazyload"
+                                            src="{{ product.cover.url }}" alt="{{ product.title }}"></a>
+                                    <div class="media-body align-self-center">
+                                        <a href="{% url 'product_details' product.slug %}">
+                                            <h6>{{ product.title }}</h6>
+                                        </a>
+                                        {% if product.discounted_price %}
+                                        <h4>{% if addresses_in_pakistan %}
+                                            PKR {{ product.discounted_price_rupee }}
+                                            {% else %}
+                                            ${{ product.discounted_price }}
+                                            {% endif %}<del>{% if addresses_in_pakistan %}
+                                            PKR{{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}</del></h4>
+                                        {% else %}
+                                        <h4>
+                                            {% if addresses_in_pakistan %}
+                                            PKR {{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}
+                                        </h4>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div>
+                                {% for product in best_seller_products.all|slice:"3:6" %}
+                                <div class="media">
+                                    <a href="{% url 'product_details' product.slug %}"><img class="img-fluid blur-up lazyload"
+                                            src="{{ product.cover.url }}" alt="{{ product.title }}"></a>
+                                    <div class="media-body align-self-center">
+                                        <a href="{% url 'product_details' product.slug %}">
+                                            <h6>{{ product.title }}</h6>
+                                        </a>
+                                        {% if product.discounted_price %}
+                                        <h4>{% if addresses_in_pakistan %}
+                                            PKR {{ product.discounted_price_rupee }}
+                                            {% else %}
+                                            ${{ product.discounted_price }}
+                                            {% endif %}<del>{% if addresses_in_pakistan %}
+                                            PKR{{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}</del></h4>
+                                        {% else %}
+                                        <h4>
+                                            {% if addresses_in_pakistan %}
+                                            PKR {{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}
+                                        </h4>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="theme-card">
+                        <h5 class="title-border">on sell</h5>
+                        <div class="offer-slider slide-1">
+                            <div>
+                                {% for product in on_sell_products.all|slice:"0:3" %}
+                                <div class="media">
+                                    <a href="{% url 'product_details' product.slug %}"><img class="img-fluid blur-up lazyload"
+                                            src="{{ product.cover.url }}" alt="{{ product.title }}"></a>
+                                    <div class="media-body align-self-center">
+                                        <a href="{% url 'product_details' product.slug %}">
+                                            <h6>{{ product.title }}</h6>
+                                        </a>
+                                        {% if product.discounted_price %}
+                                        <h4>{% if addresses_in_pakistan %}
+                                            PKR {{ product.discounted_price_rupee }}
+                                            {% else %}
+                                            ${{ product.discounted_price }}
+                                            {% endif %}<del>{% if addresses_in_pakistan %}
+                                            PKR{{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}</del></h4>
+                                        {% else %}
+                                        <h4>
+                                            {% if addresses_in_pakistan %}
+                                            PKR {{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}
+                                        </h4>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div>
+                                {% for product in on_sell_products.all|slice:"3:6" %}
+                                <div class="media">
+                                    <a href="{% url 'product_details' product.slug %}"><img class="img-fluid blur-up lazyload"
+                                            src="{{ product.cover.url }}" alt="{{ product.title }}"></a>
+                                    <div class="media-body align-self-center">
+                                        <a href="{% url 'product_details' product.slug %}">
+                                            <h6>{{ product.title }}</h6>
+                                        </a>
+                                        {% if product.discounted_price %}
+                                        <h4>{% if addresses_in_pakistan %}
+                                            PKR {{ product.discounted_price_rupee }}
+                                            {% else %}
+                                            ${{ product.discounted_price }}
+                                            {% endif %}<del>{% if addresses_in_pakistan %}
+                                            PKR{{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}</del></h4>
+                                        {% else %}
+                                        <h4>
+                                            {% if addresses_in_pakistan %}
+                                            PKR {{ product.price_pakistani_rupee }}
+                                            {% else %}
+                                            ${{ product.price_dollar }}
+                                            {% endif %}
+                                        </h4>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- product slider end -->
+
+
+    <!-- instagram section -->
+    <section class="instagram ratio_square">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 p-0">
+                    <h2 class="title-borderless"># instagram</h2>
+                    <div class="slide-7 no-arrow slick-instagram">
+                        <div>
+                            <a href="#">
+                                <div class="instagram-box"><img alt="" src="../assets/images/slider/2.jpg"
+                                        class="bg-img" style="width:100%">
+                                    <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <div class="instagram-box"><img alt="" src="../assets/images/slider/3.jpg"
+                                        class="bg-img" style="width:100%">
+                                    <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <div class="instagram-box"><img alt="" src="../assets/images/slider/4.jpg"
+                                        class="bg-img" style="width:100%">
+                                    <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <div class="instagram-box"><img alt="" src="../assets/images/slider/9.jpg"
+                                        class="bg-img" style="width:100%">
+                                    <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <div class="instagram-box"><img alt="" src="../assets/images/slider/6.jpg"
+                                        class="bg-img" style="width:100%">
+                                    <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <div class="instagram-box"><img alt="" src="../assets/images/slider/7.jpg"
+                                        class="bg-img" style="width:100%">
+                                    <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <div class="instagram-box"><img alt="" src="../assets/images/slider/8.jpg"
+                                        class="bg-img" style="width:100%">
+                                    <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <div class="instagram-box"><img alt="" src="../assets/images/slider/9.jpg"
+                                        class="bg-img" style="width:100%">
+                                    <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <div class="instagram-box"><img alt="" src="../assets/images/slider/2.jpg"
+                                        class="bg-img" style="width:100%">
+                                    <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- instagram section end -->
+    {% endblock %}
+
+   <!-- footer -->
+   <footer class="footer-light">
+        <div class="light-layout">
+            <div class="container">
+                <section class="small-section border-section border-top-0">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="subscribe">
+                                <div>
+                                    <h4>KNOW IT ALL FIRST!</h4>
+                                    <p>Never Miss Anything From Multikart By Signing Up To Our Newsletter.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <form
+                                action="https://pixelstrap.us19.list-manage.com/subscribe/post?u=5a128856334b598b395f1fc9b&amp;id=082f74cbda"
+                                class="form-inline subscribe-form auth-form needs-validation" method="post"
+                                id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+                                <div class="form-group mx-sm-3">
+                                    <input type="text" class="form-control" name="EMAIL" id="mce-EMAIL"
+                                        placeholder="Enter your email" required="required">
+                                </div>
+                                <button type="submit" class="btn btn-solid" id="mc-submit">subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <section class="section-b-space light-layout">
+            <div class="container">
+                <div class="row footer-theme partition-f">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-title footer-mobile-title">
+                            <h4>about</h4>
+                        </div>
+                        <div class="footer-contant">
+                            <div class="footer-logo"><img src="../assets/images/icon/logo.png" alt=""></div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                            <div class="footer-social">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col offset-xl-1">
+                        <div class="sub-title">
+                            <div class="footer-title">
+                                <h4>my account</h4>
+                            </div>
+                            <div class="footer-contant">
+                                <ul>
+                                    <li><a href="#">mens</a></li>
+                                    <li><a href="#">womens</a></li>
+                                    <li><a href="#">clothing</a></li>
+                                    <li><a href="#">accessories</a></li>
+                                    <li><a href="#">featured</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="sub-title">
+                            <div class="footer-title">
+                                <h4>why we choose</h4>
+                            </div>
+                            <div class="footer-contant">
+                                <ul>
+                                    <li><a href="#">shipping & return</a></li>
+                                    <li><a href="#">secure shopping</a></li>
+                                    <li><a href="{% url 'faq' %}">FAQ</a></li>
+                                    <li><a href="#">affiliates</a></li>
+                                    <li><a href="#">contacts</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="sub-title">
+                            <div class="footer-title">
+                                <h4>store information</h4>
+                            </div>
+                            <div class="footer-contant">
+                                <ul class="contact-list">
+                                    <li><i class="fa fa-map-marker"></i>Multikart Demo Store, Demo store India 345-659
+                                    </li>
+                                    <li><i class="fa fa-phone"></i>Call Us: 123-456-7898</li>
+                                    <li><i class="fa fa-envelope-o"></i>Email Us: <a href="#">Support@Fiot.com</a></li>
+                                    <li><i class="fa fa-fax"></i>Fax: 123456</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="sub-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-sm-12">
+                        <div class="footer-end">
+                            <p><i class="fa fa-copyright" aria-hidden="true"></i> 2017-18 themeforest powered by
+                                pixelstrap</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-sm-12">
+                        <div class="payment-card-bottom">
+                            <ul>
+                                <li>
+                                    <a href="#"><img src="../assets/images/icon/visa.png" alt=""></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="../assets/images/icon/mastercard.png" alt=""></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="../assets/images/icon/paypal.png" alt=""></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="../assets/images/icon/american-express.png" alt=""></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="../assets/images/icon/discover.png" alt=""></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- footer end -->
+
+
+    <!--modal popup start-->
+    <div class="modal fade bd-example-modal-lg theme-modal" id="exampleModal" tabindex="-1" role="dialog"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body modal12">
+                    <div class="container-fluid p-0">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="modal-bg">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <div class="offer-content"><img src="../assets/images/Offer-banner.png"
+                                            class="img-fluid blur-up lazyload" alt="">
+                                        <h2>newsletter</h2>
+                                        <form
+                                            action="https://pixelstrap.us19.list-manage.com/subscribe/post?u=5a128856334b598b395f1fc9b&amp;id=082f74cbda"
+                                            class="auth-form needs-validation" method="post"
+                                            id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                                            target="_blank">
+                                            <div class="form-group mx-sm-3">
+                                                <input type="text" class="form-control" name="EMAIL" id="mce-EMAIL"
+                                                    placeholder="Enter your email" required="required">
+                                                <button type="submit" class="btn btn-solid"
+                                                    id="mc-submit">subscribe</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--modal popup end-->
+
+
+    <div class="modal fade bd-example-modal-lg theme-modal cart-modal" id="addtocart" tabindex="-1" role="dialog"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body modal1">
+                    <div class="container-fluid p-0">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="modal-bg addtocart">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <div class="media">
+                                        <a href="#">
+                                            <img class="img-fluid blur-up lazyload pro-img"
+                                                src="../assets/images/fashion/product/43.jpg" alt="">
+                                        </a>
+                                        <div class="media-body align-self-center text-center">
+                                            <a href="#">
+                                                <h6>
+                                                    <i class="fa fa-check"></i>Item
+                                                    <span> successfully added to your Cart</span>
+                                                </h6>
+                                            </a>
+                                            <div class="buttons">
+                                                <a href="{% url 'cart_info' %}" class="view-cart btn btn-solid">Your cart</a>
+                                                <a href="#" class="checkout btn btn-solid">Check out</a>
+                                            </div>
+
+                                            <div class="upsell_payment">
+                                                <img src="../assets/images/payment_cart.png"
+                                                    class="img-fluid blur-up lazyload" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- tap to top start -->
+    <div class="tap-top">
+        <div><i class="fa fa-angle-double-up"></i></div>
+    </div>
+    <!-- tap to top end -->
+
+
+    <!-- latest jquery-->
+    <script src="/static/assets/js/jquery-3.3.1.min.js"></script>
+
+    <!-- menu js-->
+    <script src="/static/assets/js/menu.js"></script>
+
+    <!-- lazyload js-->
+    <script src="/static/assets/js/lazysizes.min.js"></script>
+
+    <!-- popper js-->
+    <script src="/static/assets/js/popper.min.js"></script>
+
+    <!-- slick js-->
+    <script src="/static/assets/js/slick.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="/static/assets/js/bootstrap.js"></script>
+
+    <!-- Bootstrap Notification js-->
+    <script src="/static/assets/js/bootstrap-notify.min.js"></script>
+
+    <!-- Theme js-->
+    <script src="/static/assets/js/script.js"></script>
+
+    <script src="https://kit.fontawesome.com/9d5b946528.js" crossorigin="anonymous"></script>
+
+    <script>
+        //$(window).on('load', function () {
+        //    setTimeout(function () {
+        //        $('#exampleModal').modal('show');
+        //    }, 2500);
+        //});
+
+        function openSearch() {
+            document.getElementById("search-overlay").style.display = "block";
+        }
+
+        function closeSearch() {
+            document.getElementById("search-overlay").style.display = "none";
+        }
+    </script>
+
+    <script>
+        $(document).on('click', '#add', function(event){
+          event.preventDefault();
+          var pk = $(this).attr('value');
+          $.ajax({
+            type: 'POST',
+            url: '{% url "add_to_wishlist" %}',
+            data: {'id':pk, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
+            dataType: 'json',
+            success: function(response){
+              $('#wishlist-section').html(response['form']);
+              $('.fabutton'+pk).hide();
+              console.log($('#wishlist-section').html(response['form']));
+            },
+            error: function(rs, e){
+              console.log(rs.responseText);
+            },
+          });
+        });
+    </script>
+    <script>
+        $(document).on('click', '#remove_item', function(event){
+          event.preventDefault();
+          var pk = $(this).attr('value');
+          $.ajax({
+            type: 'POST',
+            url: '{% url "remove_cart_item" %}',
+            data: {'id':pk, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
+            dataType: 'json',
+            success: function(response){
+              $('#remove-item-section').html(response['form']);
+              $('.item-row'+pk).hide();
+              console.log($('#remove-item-section').html(response['form']));
+            },
+            error: function(rs, e){
+              console.log(rs.responseText);
+            },
+          });
+        });
+    </script>
+    <script>
+        $(document).on('submit', '.cart_form', function(event){
+          event.preventDefault();
+          console.log($(this).serialize());
+          $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'),
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: function(response) {
+              $('.cart_form').html(response['form']);
+            },
+            error: function(rs, e) {
+              console.log(rs.responseText);
+            },
+          });
+        });
+    </script>
+    <script>
+        $(document).on('submit', '.edit-cart-form', function(event){
+          event.preventDefault();
+          console.log($(this).serialize());
+          // var updateTotal = $('#product-price').val()*$('#quantity').val()
+          // console.log(updateTotal)
+
+          $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'),
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: function(response) {
+              $('.edit-cart-form').html(response['form']);
+              document.getElementById("welcomeDiv").style.display = "inline-block";
+              document.getElementById("welcomeDiv").style.width = "50%";
+              // $('.td-color-1').text($('.product-price').val()*$('.input-number').val());
+            },
+            error: function(rs, e) {
+              console.log(rs.responseText);
+            },
+          });
+        });
+    </script>
+</body>
+
+</html>

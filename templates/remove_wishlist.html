@@ -1,0 +1,6 @@
+<form action="{% url 'remove_wishlist_item' %}" method="POST" id="wishlist-section" style="display: inline-block;">
+    {% csrf_token %}
+    <button type="submit" id="remove" value="{{ product.id }}" class="fabutton" style="background: none; padding: 0px; border: none;">
+        <i class="ti-close"></i> 
+    </button>
+</form>

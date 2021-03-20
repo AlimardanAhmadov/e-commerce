@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% load countries %}
+{% get_countries as countries %}
+<!-- breadcrumb start -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>profile</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">profile</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
+
+<!-- address section start -->
+<section class="contact-page register-page section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>SHIPPING/BILLING ADDRESS</h3>
+                <form class="theme-form" action="{% url 'add_address' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <label for="name">flat / plot</label>
+                            <input name="flat" type="text" class="form-control" id="home-ploat" placeholder="Flat/Company"
+                                required="">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="name">Address *</label>
+                            <input name="address" type="text" class="form-control" id="address-two" placeholder="Address"
+                                required="">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email">Zip Code *</label>
+                            <input name="postcode" type="text" class="form-control" id="zip-code" placeholder="zip-code"
+                                required="">
+                        </div>
+                        <div class="col-md-6 select_input">
+                            <label for="review">Country *</label>
+                            <select name="country" class="form-control" size="1">
+                                {% for country in countries %}
+                                    <option value="{{ country.code }}">{{ country.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="review">City *</label>
+                            <input name="city" type="text" class="form-control" id="city" placeholder="City" required="">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="review">Region/State (Optional for countries outside of the US)</label>
+                            <input name="region" type="text" class="form-control" id="region-state" placeholder="Region/state"
+                                required="">
+                        </div>
+                        <div class="col-md-6 select_input">
+                            <label for="review">Address Type *</label>
+                            <select name="address_type" class="form-control" size="1">
+                                <option value="Shipping Address">Shipping Address</option>
+                                <option value="Billing Address">Billing Address</option>
+                            </select>
+                        </div>
+                        <!--<div class="col-md-12">
+                            <label for="default">Set as default?</label>
+                            <input type="checkbox" name="default" id="default">
+                        </div>-->
+                        <div class="col-md-12">
+                            <button class="btn btn-sm btn-solid" type="submit">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section ends -->
+{% endblock %}

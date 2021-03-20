@@ -1,0 +1,49 @@
+<form action="{% url 'add_product_to_cart' product.slug %}" method="POST" id="{{ product.id }}" class="cart_form">
+    {% csrf_token %}
+    <label for="colors">Colors</label>
+    <select id="color" name="color" class="form-control" size="1" style="width: min-content">
+        {% for color in product.available_colors.all %}
+        <option value="{{ color }}"> 
+            </div> {{ color }}
+        </option>
+        {% endfor %}
+    </select>
+    <br>
+    <div class="">
+        <h6 class="product-title">product details</h6>
+        <p>{{ product.description }}</p>
+    </div>
+    <div class="product-description border-product">
+        <label for="size">Select Size</label>
+        <select id="size" name="size" class="form-control" size="1" style="width: min-content;">
+            {% for size in product.available_sizes.all %}
+            <option value="{{ size }}">{{ size }}</option>
+            {% endfor %}
+        </select>
+        <h6 class="product-title">quantity</h6>
+        <div class="qty-box">
+            <div class="input-group">
+                <span class="input-group-prepend">
+                    <button
+                        type="button" class="btn quantity-left-minus"
+                        data-type="minus" data-field=""><i
+                            class="ti-angle-left"></i>
+                    </button> 
+                </span>
+                <input id="quantity" type="text" name="quantity" class="form-control input-number"
+                    value="1"> 
+                <span class="input-group-prepend">
+                    <button
+                    type="button" class="btn quantity-right-plus"
+                    data-type="plus" data-field=""><i
+                        class="ti-angle-right"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="product-buttons">
+        <button id="add-cart" type="submit" value="{{ product.id }}" data-toggle="modal" data-target="#addtocart" class="btn btn-solid fabutton1">add to cart</button> 
+        <a href="{% url 'product_details' product.slug %}" class="btn btn-solid">view detail</a>
+    </div>
+</form>

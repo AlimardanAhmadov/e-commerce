@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<style>
+
+    @media screen and (max-width: 1000px){
+        #features {
+            display: none;
+        }
+    }
+
+</style>
+
+<!-- breadcrumb start -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>contact</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                        <li class="breadcrumb-item active">contact</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
+
+
+<!--section start-->
+<section class="contact-page section-b-space">
+    <div class="container">
+        <div class="section-b-space">
+            <div class="contact-right">
+                <ul id="features">
+                    <li style="display: inline-block;">
+                        <div class="contact-icon"><img src="/static/assets/images/icon/phone.png"
+                                alt="Generic placeholder image">
+                            <h6>Contact Us</h6>
+                        </div>
+                        <div class="media-body">
+                            <p>+91 123 - 456 - 7890</p>
+                            <p>+86 163 - 451 - 7894</p>
+                        </div>
+                    </li>
+                    <li style="display: inline-block; position: relative; left: 40px;">
+                        <div class="contact-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <h6>Address</h6>
+                        </div>
+                        <div class="media-body">
+                            <p>ABC Complex,Near xyz, New York</p>
+                            <p>USA 123456</p>
+                        </div>
+                    </li>
+                    <li style="display: inline-block; position: relative; left: 40px;">
+                        <div class="contact-icon"><i class="fa fa-fax" aria-hidden="true"></i>
+                            <h6>Fax</h6>
+                        </div>
+                        <div class="media-body">
+                            <p>Support@Shopcart.com</p>
+                            <p>info@shopcart.com</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <form class="theme-form" action="{% url 'contact' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <label for="name">First Name</label>
+                            <input name="first_name" type="text" class="form-control" id="name" placeholder="Enter Your name"
+                                required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email">Last Name</label>
+                            <input name="last_name" type="text" class="form-control" id="last-name" placeholder="Email" required="">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="review">Phone number</label>
+                            <input name="phone" type="text" class="form-control" id="review" placeholder="Enter your number"
+                                required="">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email">Email</label>
+                            <input name="email" type="email" class="form-control" id="email" placeholder="Email" required="">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="review">Write Your Message</label>
+                            <textarea name="message" class="form-control" placeholder="Write Your Message"
+                                id="exampleFormControlTextarea1" rows="6"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <button class="btn btn-solid" type="submit">Send Your Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Section ends-->
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<style>
+    #welfare-section {
+        padding-top: 170px;
+    }
+
+    #welfare-section p{
+        font-size: 30px;
+    }
+</style>
+
+<div class="logout-section" style="text-align: center; min-height: 600px;">
+    <img src="/static/assets/images/signout.svg" height="270" width="270" alt="" style="position: relative; top: 80px;">
+    <div id="welfare-section">
+        <p>You are signed out! We will miss you :(</p>
+    </div>
+    <br>
+    <div class="form-group">
+        <a href="{% url 'login_view' %}" class="btn btn-solid">Customer Login</a>
+    </div>
+    <small>or</small>
+    <a href="{% url 'seller_login_view' %}" style="color: #fe816d; font-size: 15px;"> Login as a seller </a>
+</div>
+<br>
+
+{% endblock %}

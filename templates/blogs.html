@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+ <!-- breadcrumb start -->
+ <div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>blog</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active">blog</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
+
+
+<!-- section start -->
+<section class="section-b-space blog-page ratio2_3">
+    <div class="container">
+        <div class="row">
+            <!--Blog sidebar start-->
+            <div class="col-xl-3 col-lg-4 col-md-5">
+                <div class="blog-sidebar">
+                    <!--<div class="theme-card">
+                        <h4>Recent Blog</h4>
+                        <ul class="recent-blog">
+                            {% for blog in recent_blogs %}
+                            <li>
+                                <div class="media"><img class="img-fluid blur-up lazyload"
+                                        src="{{ blog.cover.url }}" alt="Generic placeholder image">
+                                    <div class="media-body align-self-center">
+                                        <h6>{{ blog.published }}</h6>
+                                        <p>{{ blog.hits }} hits</p>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>-->
+                    <div class="theme-card">
+                        <h4>Popular Blog</h4>
+                        <ul class="popular-blog">
+                            {% for blog in popular %}
+                            <li>
+                                <div class="media">
+                                    <div class="blog-date"><span>{{ blog.published|date:"d" }} </span><span>{{ blog.published|date:"M" }}</span></div>
+                                    <div class="media-body align-self-center">
+                                        <a href="{% url 'blog_details' blog.slug %}"><h6>{{ blog.title }}</h6></a>
+                                        <p>{{ blog.hits }} hits</p>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--Blog sidebar start-->
+            <!--Blog List start-->
+            <div class="col-xl-9 col-lg-8 col-md-7 order-sec" style="max-height: 1220px; overflow: auto;">
+                {% for blog in all_blogs %}
+                <div class="row blog-media">
+                    <div class="col-xl-6">
+                        <div class="blog-left">
+                            <a href="{% url 'blog_details' blog.slug %}"><img src="{{ blog.cover.url }}"
+                                    class="img-fluid blur-up lazyload bg-img" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="blog-right">
+                            <div>
+                                <h6>{{ blog.published }}</h6><a href="{% url 'blog_details' blog.slug %}">
+                                    <h4>{{ blog.title }}</h4>
+                                </a>
+                                <ul class="post-social">
+                                    <li><i class="fa fa-heart"></i>{{ blog.hits }} Hits</li>
+                                    <li><i class="fa fa-comments"></i> 10 Comment</li>
+                                </ul>
+                                <p>{{ blog.short_description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <!--Blog List start-->
+        </div>
+    </div>
+</section>
+<!-- Section ends -->
+
+{% endblock %}

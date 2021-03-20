@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<title>{% block title %} eCommerce | Personal Information {% endblock %}</title>
+
+<!-- breadcrumb start -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>profile</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">profile</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
+
+
+<!-- personal deatail section start -->
+<section class="contact-page register-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>PERSONAL DETAILS</h3>
+                <form class="theme-form" action="{% url 'personal_information' %}" method="POST">
+                    {% csrf_token%}
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <label for="name">First Name</label>
+                            <input value="{{ request.user.profile.first_name }}" name="first_name" type="text" class="form-control" id="name" placeholder="Enter Your name"
+                                required="">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="last-name">Last Name</label>
+                            <input value="{{ request.user.profile.last_name }}" name="last_name" type="text" class="form-control" id="last-name" placeholder="Enter Your Last Name" required="">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phone_number">Phone number</label>
+                            <input value="{{ request.user.profile.phone_number }}" name="phone_number" type="text" class="form-control" id="phone_number" placeholder="Enter your number"
+                                required="">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email">Email</label>
+                            <input value="{{ request.user.profile.email }}" name="email" type="email" class="form-control" id="email" placeholder="Enter Your Email" required="">
+                        </div>
+                        <div class="col-md-12">
+                            <button class="btn btn-sm btn-solid" type="submit">Update</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section ends -->
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

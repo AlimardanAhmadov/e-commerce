@@ -1,0 +1,6 @@
+<form action="{% url 'add_to_wishlist' %}" method="POST" id="wishlist-section">
+    {% csrf_token %}
+    <button type="submit" id="add" data-id="{{ product.id }}" class="fabutton{{ product.id }}" value="{{ product.id }}" style="background: none; padding: 0px; border: none;">
+        <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart" aria-hidden="true"></i></a>
+    </button>
+</form>
